@@ -34,5 +34,30 @@
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div id="bubble_map"></div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-6">
+            <div id="flow_map"></div>
+        </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    // ... your existing scripts ...
+    
+    var spec3 = "jsons/map_bubbles.vg.json";
+    vegaEmbed('#bubble_map', spec3).catch(console.error);
+    </script>
+
+    <script type="text/javascript">
+  // ... previous chart scripts
+    var spec4 = "jsons/map_flow.vg.json";
+    vegaEmbed('#flow_map', spec4).catch(console.error);
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Total Higher Education Enrollments by State (2024)",
+  "width": 600,
+  "height": 400,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e0e0e0",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "data": {
+        "url": "jsons/state_enrollments.json"
+      },
+      "mark": {"type": "circle", "color": "#08519c", "opacity": 0.7},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "size": {
+          "field": "total_students",
+          "type": "quantitative",
+          "title": "Total Students",
+          "scale": {"domain": [5000, 350000], "range": [50, 2000]}
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "total_students", "type": "quantitative", "title": "Total Enrolled", "format": ","}
+        ]
+      }
+    }
+  ]
+}

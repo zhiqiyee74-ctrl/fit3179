@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Interstate Student Mobility (Flows > 2,000 students)",
+  "width": 600,
+  "height": 400,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0f0f0",
+        "stroke": "#cccccc",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "jsons/interstate_flows.json"
+      },
+      "mark": {"type": "rule", "color": "#2171b5", "opacity": 0.6},
+      "encoding": {
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "dest_lon"},
+        "latitude2": {"field": "dest_lat"},
+        "size": {
+          "field": "students",
+          "type": "quantitative",
+          "scale": {"range": [1, 8]},
+          "legend": {"title": "Number of Students"}
+        },
+        "tooltip": [
+          {"field": "origin", "type": "nominal", "title": "Home State"},
+          {"field": "dest", "type": "nominal", "title": "Destination State"},
+          {"field": "students", "type": "quantitative", "title": "Students Moving", "format": ","}
+        ]
+      }
+    }
+  ]
+}

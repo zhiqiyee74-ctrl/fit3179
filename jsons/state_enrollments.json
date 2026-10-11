@@ -1,0 +1,10 @@
+[
+  {"state": "New South Wales", "lat": -33.8688, "lon": 151.2093, "total_students": 344251},
+  {"state": "Victoria", "lat": -37.8136, "lon": 144.9631, "total_students": 287996},
+  {"state": "Queensland", "lat": -27.4698, "lon": 153.0251, "total_students": 213427},
+  {"state": "Western Australia", "lat": -31.9505, "lon": 115.8605, "total_students": 106299},
+  {"state": "South Australia", "lat": -34.9285, "lon": 138.6007, "total_students": 72403},
+  {"state": "Tasmania", "lat": -42.8821, "lon": 147.3272, "total_students": 18206},
+  {"state": "Northern Territory", "lat": -12.4634, "lon": 130.8456, "total_students": 7498},
+  {"state": "Australian Capital Territory", "lat": -35.2809, "lon": 149.1300, "total_students": 15000} 
+]
