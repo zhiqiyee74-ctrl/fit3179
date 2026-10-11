@@ -4,7 +4,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "jsons/study_modes.json"
+    "url": "data/study_modes.json"
   },
   "transform": [
     {

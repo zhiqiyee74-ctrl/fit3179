@@ -13,7 +13,7 @@
       "lookup": "properties.STATE_NAME",
       "from": {
         "data": {
-          "url": "jsons/state_participation.json"
+          "url": "data/state_participation.json"
         },
         "key": "state",
         "fields": ["participation_rate"]

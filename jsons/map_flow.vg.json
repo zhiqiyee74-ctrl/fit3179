@@ -31,7 +31,7 @@
     },
     {
       "data": {
-        "url": "jsons/interstate_flows.json"
+        "url": "data/interstate_flows.json"
       },
       "transform": [
         {"filter": "datum.origin == Origin_State"}

@@ -19,7 +19,7 @@
     },
     {
       "data": {
-        "url": "jsons/state_enrollments.json"
+        "url": "data/state_enrollments.json"
       },
       "mark": {"type": "circle", "color": "#08519c", "opacity": 0.7},
       "encoding": {

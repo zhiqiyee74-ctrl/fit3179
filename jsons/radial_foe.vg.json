@@ -6,7 +6,7 @@
   "padding": 5,
   "autosize": {"type": "fit", "contains": "padding"},
   "data": {
-    "url": "jsons/fields_radial.json"
+    "url": "data/fields_radial.json"
   },
   "layer": [
     {

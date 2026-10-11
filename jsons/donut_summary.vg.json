@@ -4,7 +4,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "jsons/destinations_summary.json"
+    "url": "data/destinations_summary.json"
   },
   "layer": [
     {

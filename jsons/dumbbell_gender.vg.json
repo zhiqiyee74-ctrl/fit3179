@@ -4,7 +4,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "jsons/gender_gap.json"
+    "url": "data/gender_gap.json"
   },
   "encoding": {
     "y": {

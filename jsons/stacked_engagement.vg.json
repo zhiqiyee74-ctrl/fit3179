@@ -4,7 +4,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "jsons/engagement_education.json"
+    "url": "data/engagement_education.json"
   },
   "mark": {"type": "bar", "cornerRadiusEnd": 2},
   "encoding": {

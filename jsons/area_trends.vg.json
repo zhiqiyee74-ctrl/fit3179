@@ -4,7 +4,7 @@
   "width": "container",
   "height": 400,
   "data": {
-    "url": "jsons/foe_trends.json"
+    "url": "data/foe_trends.json"
   },
   "mark": {
     "type": "line",

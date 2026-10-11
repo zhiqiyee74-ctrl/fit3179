@@ -4,7 +4,7 @@
   "width": "container",
   "height": 400,
   "data": {
-    "url": "jsons/age_vs_level.json"
+    "url": "data/age_vs_level.json"
   },
   "encoding": {
     "y": {
