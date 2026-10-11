@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Study Participation Trends (2015-2025)",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "jsons/foe_trends.json"
+  },
+  "mark": {
+    "type": "line",
+    "point": {"filled": true, "size": 40},
+    "strokeWidth": 2.5
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {"labelAngle": 0, "grid": false}
+    },
+    "y": {
+      "field": "Proportion",
+      "type": "quantitative",
+      "title": "Participation Share (%)",
+      "axis": {"grid": true, "gridOpacity": 0.5},
+      "scale": {"zero": false}
+    },
+    "color": {
+      "field": "Field",
+      "type": "nominal",
+      "legend": {
+        "title": "Field of Study",
+        "orient": "right",
+        "labelFontSize": 11
+      },
+      "scale": {"scheme": "tableau10"}
+    },
+    "tooltip": [
+      {"field": "Field", "type": "nominal", "title": "Field"},
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Proportion", "type": "quantitative", "title": "Share (%)"}
+    ]
+  }
+}

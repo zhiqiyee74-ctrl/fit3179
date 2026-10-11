@@ -1,0 +1,14 @@
+[
+  {"Age": "15-19", "Gender": "Male", "Proportion": 22.4},
+  {"Age": "15-19", "Gender": "Female", "Proportion": 22.3},
+  {"Age": "20-24", "Gender": "Male", "Proportion": 45.0},
+  {"Age": "20-24", "Gender": "Female", "Proportion": 44.7},
+  {"Age": "25-29", "Gender": "Male", "Proportion": 16.0},
+  {"Age": "25-29", "Gender": "Female", "Proportion": 20.1},
+  {"Age": "30-34", "Gender": "Male", "Proportion": 9.9},
+  {"Age": "30-34", "Gender": "Female", "Proportion": 13.8},
+  {"Age": "35-44", "Gender": "Male", "Proportion": 6.4},
+  {"Age": "35-44", "Gender": "Female", "Proportion": 9.5},
+  {"Age": "45-74", "Gender": "Male", "Proportion": 1.8},
+  {"Age": "45-74", "Gender": "Female", "Proportion": 3.7}
+]
