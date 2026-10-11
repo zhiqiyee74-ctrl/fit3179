@@ -18,7 +18,8 @@
       "field": "Proportion",
       "type": "quantitative",
       "title": "Proportion of Population (%)",
-      "axis": {"grid": true}
+      "stack": "normalize",
+      "axis": {"format": "%", "grid": true}
     },
     "color": {
       "field": "Status",
@@ -35,7 +36,7 @@
     "tooltip": [
       {"field": "Education", "type": "nominal", "title": "Education Level"},
       {"field": "Status", "type": "nominal", "title": "Status"},
-      {"field": "Proportion", "type": "quantitative", "title": "Proportion (%)"}
+      {"field": "Proportion", "type": "quantitative", "title": "Share (%)"}
     ]
   }
 }
