@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Full-time vs Part-time Enrollments by State",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "jsons/study_modes.json"
+  },
+  "transform": [
+    {
+      "calculate": "datum.Type == 'Part-time' ? -datum.Students : datum.Students",
+      "as": "SignedStudents"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "title": null,
+      "sort": ["NSW", "Vic", "Qld", "WA", "SA", "ACT", "Tas", "NT"],
+      "axis": {"grid": false, "labelFontWeight": "bold"}
+    },
+    "x": {
+      "field": "SignedStudents",
+      "type": "quantitative",
+      "title": "Number of Students",
+      "axis": {
+        "labelExpr": "abs(datum.value) / 1000 + 'k'",
+        "grid": true,
+        "gridOpacity": 0.4
+      }
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Part-time", "Full-time"],
+        "range": ["#6baed6", "#08519c"]
+      },
+      "legend": {
+        "title": "Study Mode",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "Type", "type": "nominal"},
+      {"field": "Students", "type": "quantitative", "format": ",", "title": "Total Students"}
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {"State": "NSW", "Type": "Full-time", "Students": 765500},
+  {"State": "NSW", "Type": "Part-time", "Students": 308900},
+  {"State": "VIC", "Type": "Full-time", "Students": 639200},
+  {"State": "VIC", "Type": "Part-time", "Students": 253500},
+  {"State": "QLD", "Type": "Full-time", "Students": 439200},
+  {"State": "QLD", "Type": "Part-time", "Students": 206400},
+  {"State": "WA", "Type": "Full-time", "Students": 219600},
+  {"State": "WA", "Type": "Part-time", "Students": 105800},
+  {"State": "SA", "Type": "Full-time", "Students": 137800},
+  {"State": "SA", "Type": "Part-time", "Students": 76900},
+  {"State": "ACT", "Type": "Full-time", "Students": 44300},
+  {"State": "ACT", "Type": "Part-time", "Students": 18500},
+  {"State": "TAS", "Type": "Full-time", "Students": 36000},
+  {"State": "TAS", "Type": "Part-time", "Students": 23600},
+  {"State": "NT", "Type": "Full-time", "Students": 14500},
+  {"State": "NT", "Type": "Part-time", "Students": 10900}
+]

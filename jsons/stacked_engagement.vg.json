@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Engagement Outcomes by Education Level",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "jsons/engagement_education.json"
+  },
+  "mark": {"type": "bar", "cornerRadiusEnd": 2},
+  "encoding": {
+    "y": {
+      "field": "Education",
+      "type": "nominal",
+      "title": null,
+      "sort": ["Bachelor or above", "Advanced Diploma", "Certificate III/IV", "Year 12", "Year 11", "Year 10", "Below Year 10"]
+    },
+    "x": {
+      "field": "Proportion",
+      "type": "quantitative",
+      "title": "Proportion of Population (%)",
+      "axis": {"grid": true}
+    },
+    "color": {
+      "field": "Status",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Fully Engaged", "Partially Engaged", "Not Engaged"],
+        "range": ["#08519c", "#6baed6", "#cbd5e1"]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {"field": "Education", "type": "nominal", "title": "Education Level"},
+      {"field": "Status", "type": "nominal", "title": "Status"},
+      {"field": "Proportion", "type": "quantitative", "title": "Proportion (%)"}
+    ]
+  }
+}

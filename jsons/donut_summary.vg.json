@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Ultimate Destinations of 2024 School Leavers",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "jsons/destinations_summary.json"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 75,
+        "outerRadius": 110,
+        "padAngle": 0.04,
+        "cornerRadius": 5
+      },
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Enrolled in Study", "Employed Only", "Not Employed / Looking for Work"],
+            "range": ["#08519c", "#6baed6", "#cbd5e1"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null,
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [
+          {"field": "Category", "type": "nominal", "title": "Destination"},
+          {"field": "Value", "type": "quantitative", "format": ",", "title": "Total People"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "color": "#1e293b",
+        "dy": -5
+      },
+      "encoding": {
+        "text": {"value": "314,000"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "color": "#64748b",
+        "dy": 15
+      },
+      "encoding": {
+        "text": {"value": "School Leavers"}
+      }
+    }
+  ]
+}

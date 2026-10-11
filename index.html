@@ -168,14 +168,50 @@
                     </div>
                 </div>
                 
-                <!-- Space for Chart 9 -->
+                <!-- Chart 9: Stacked Bar Chart -->
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100 shadow-sm border-0 bg-light border-dashed">
-                        <div class="card-body d-flex align-items-center justify-content-center">
-                            <p class="text-muted text-center mb-0">Space for Chart 9</p>
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h6 card-title fw-bold text-dark mb-3">Does Education Level Matter?</h3>
+                            <p class="small text-muted mb-4">Higher educational attainment drastically reduces the likelihood of being completely disengaged from study and work.</p>
+                            
+                            <div class="d-flex justify-content-center flex-grow-1 w-100">
+                                <div id="stacked_engagement" class="w-100"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Chart 10: Diverging Bar Chart -->
+                <div class="col-12 col-lg-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h6 card-title fw-bold text-dark mb-3">Study Load Distribution</h3>
+                            <p class="small text-muted mb-4">A comparison of full-time vs part-time study modes across states, reflecting different regional workforce integrations.</p>
+                            
+                            <div class="d-flex justify-content-center flex-grow-1 w-100">
+                                <div id="diverging_modes" class="w-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Summary Row for Chart 11 -->
+            <div class="row g-4 mt-2 mb-5 justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h3 class="h6 card-title fw-bold text-dark mb-3">The Bottom Line: Post-School Outcomes</h3>
+                            <p class="small text-muted mb-4">More than half of all recent school leavers transitioned immediately into further tertiary study, highlighting the continued demand for higher education pathways in Australia.</p>
+                            
+                            <div class="d-flex justify-content-center flex-grow-1 w-100">
+                                <div id="donut_summary" class="w-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div>
 
             </div>
@@ -204,6 +240,10 @@
         vegaEmbed('#radial_foe', "jsons/radial_foe.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#area_trends', "jsons/area_trends.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#dumbbell_gender', "jsons/dumbbell_gender.vg.json", embedOptions).catch(console.error);
+        vegaEmbed('#stacked_engagement', "jsons/stacked_engagement.vg.json", embedOptions).catch(console.error);
+        vegaEmbed('#diverging_modes', "jsons/diverging_modes.vg.json", embedOptions).catch(console.error);
+        vegaEmbed('#donut_summary', "jsons/donut_summary.vg.json", embedOptions).catch(console.error);
+
     </script>
 </body>
 </html>

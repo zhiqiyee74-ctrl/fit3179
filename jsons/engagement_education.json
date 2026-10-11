@@ -1,0 +1,23 @@
+[
+  {"Education": "Bachelor or above", "Status": "Fully Engaged", "Proportion": 82.6},
+  {"Education": "Bachelor or above", "Status": "Partially Engaged", "Proportion": 12.9},
+  {"Education": "Bachelor or above", "Status": "Not Engaged", "Proportion": 5.5},
+  {"Education": "Advanced Diploma", "Status": "Fully Engaged", "Proportion": 79.0},
+  {"Education": "Advanced Diploma", "Status": "Partially Engaged", "Proportion": 11.3},
+  {"Education": "Advanced Diploma", "Status": "Not Engaged", "Proportion": 9.7},
+  {"Education": "Certificate III/IV", "Status": "Fully Engaged", "Proportion": 79.5},
+  {"Education": "Certificate III/IV", "Status": "Partially Engaged", "Proportion": 13.5},
+  {"Education": "Certificate III/IV", "Status": "Not Engaged", "Proportion": 9.0},
+  {"Education": "Year 12", "Status": "Fully Engaged", "Proportion": 78.6},
+  {"Education": "Year 12", "Status": "Partially Engaged", "Proportion": 14.0},
+  {"Education": "Year 12", "Status": "Not Engaged", "Proportion": 7.6},
+  {"Education": "Year 11", "Status": "Fully Engaged", "Proportion": 47.8},
+  {"Education": "Year 11", "Status": "Partially Engaged", "Proportion": 23.8},
+  {"Education": "Year 11", "Status": "Not Engaged", "Proportion": 30.0},
+  {"Education": "Year 10", "Status": "Fully Engaged", "Proportion": 49.5},
+  {"Education": "Year 10", "Status": "Partially Engaged", "Proportion": 18.0},
+  {"Education": "Year 10", "Status": "Not Engaged", "Proportion": 31.7},
+  {"Education": "Below Year 10", "Status": "Fully Engaged", "Proportion": 25.4},
+  {"Education": "Below Year 10", "Status": "Partially Engaged", "Proportion": 19.3},
+  {"Education": "Below Year 10", "Status": "Not Engaged", "Proportion": 55.3}
+]
