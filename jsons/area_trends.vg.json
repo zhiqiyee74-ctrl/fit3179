@@ -32,7 +32,9 @@
         "orient": "right",
         "labelFontSize": 11
       },
-      "scale": {"scheme": "tableau10"}
+      "scale": {
+        "range": ["#1f77b4", "#ff7f0e", "#9467bd", "#e377c2", "#17becf", "#7f7f7f", "#e7ba52"]
+      }
     },
     "tooltip": [
       {"field": "Field", "type": "nominal", "title": "Field"},
