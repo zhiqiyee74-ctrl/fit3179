@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Total Enrollments by Field of Education",
+  "width": "container",
+  "height": 360,
+  "padding": 5,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "data": {
+    "url": "jsons/fields_radial.json"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 30,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5,
+        "tooltip": true
+      },
+      "encoding": {
+        "theta": {
+          "field": "Field",
+          "type": "nominal",
+          "sort": {"field": "Students", "order": "descending"}
+        },
+        "radius": {
+          "field": "Students",
+          "type": "quantitative",
+          "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}
+        },
+        "color": {
+          "field": "Students",
+          "type": "quantitative",
+          "scale": {"scheme": "blues"},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Field", "type": "nominal", "title": "Field of Study"},
+          {"field": "Students", "type": "quantitative", "title": "Total Students", "format": ","}
+        ]
+      }
+    }
+  ]
+}

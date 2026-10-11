@@ -112,11 +112,27 @@
                     </div>
                 </div>
                 
-                <!-- Placeholder for Chart 6 (e.g. Treemap or Donut) -->
+                <!-- Chart 6: Radial Chart -->
                 <div class="col-12 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0 bg-light border-dashed">
-                        <div class="card-body d-flex align-items-center justify-content-center">
-                            <p class="text-muted text-center mb-0">Space for Chart 6</p>
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h6 card-title fw-bold text-dark mb-3">Popular Fields of Study</h3>
+                            
+                            <div class="d-flex align-items-center flex-grow-1 w-100">
+                                <div id="radial_foe" class="w-100"></div>
+                            </div>
+                            
+                            <!-- Custom HTML Legend for readability -->
+                            <div class="small text-muted mt-3">
+                                <ul class="list-unstyled mb-0" style="columns: 2; font-size: 0.8rem;">
+                                    <li><i class="bi bi-circle-fill text-primary"></i> Management</li>
+                                    <li><i class="bi bi-circle-fill text-primary" style="opacity: 0.9;"></i> Society/Culture</li>
+                                    <li><i class="bi bi-circle-fill text-primary" style="opacity: 0.8;"></i> Health</li>
+                                    <li><i class="bi bi-circle-fill text-primary" style="opacity: 0.7;"></i> IT</li>
+                                    <li><i class="bi bi-circle-fill text-primary" style="opacity: 0.6;"></i> Education</li>
+                                    <li><i class="bi bi-circle-fill text-primary" style="opacity: 0.5;"></i> Science</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,6 +159,7 @@
         vegaEmbed('#flow_map', "jsons/map_flow.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#sankey_flow', "jsons/sankey_leavers.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#heatmap_age', "jsons/heatmap_age.vg.json", embedOptions).catch(console.error);
+        vegaEmbed('#radial_foe', "jsons/radial_foe.vg.json", embedOptions).catch(console.error);
     </script>
 </body>
 </html>
