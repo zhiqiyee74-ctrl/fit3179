@@ -3,7 +3,7 @@
   "title": "Total Enrollments by Field of Education",
   "width": "container",
   "height": 360,
-  "padding": 5,
+  "padding": 10,
   "autosize": {"type": "fit", "contains": "padding"},
   "data": {
     "url": "data/fields_radial.json"
@@ -29,9 +29,34 @@
           "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}
         },
         "color": {
-          "field": "Students",
-          "type": "quantitative",
-          "scale": {"scheme": "blues"},
+          "field": "Field",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Management & Commerce",
+              "Society & Culture",
+              "Health",
+              "Information Technology",
+              "Education",
+              "Science",
+              "Engineering",
+              "Creative Arts",
+              "Architecture & Building",
+              "Agriculture & Environment"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#9467bd",
+              "#e377c2",
+              "#17becf",
+              "#7f7f7f",
+              "#e7ba52",
+              "#2ca02c",
+              "#d62728",
+              "#8c564b"
+            ]
+          },
           "legend": null
         },
         "tooltip": [
