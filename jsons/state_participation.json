@@ -1,0 +1,10 @@
+[
+  { "state": "NSW", "participation_rate": 17.1 },
+  { "state": "VIC", "participation_rate": 17.0 },
+  { "state": "QLD", "participation_rate": 15.7 },
+  { "state": "SA", "participation_rate": 15.7 },
+  { "state": "WA", "participation_rate": 15.0 },
+  { "state": "TAS", "participation_rate": 14.4 },
+  { "state": "NT", "participation_rate": 16.8 },
+  { "state": "ACT", "participation_rate": 17.9 }
+]

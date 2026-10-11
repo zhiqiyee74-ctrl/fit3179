@@ -17,6 +17,22 @@
 
 </head>
 <body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Higher Education Pathways in Australia</h2>
+                <p>An overview of student transitions and study participation across the country.</p>
+                <!-- Map Container -->
+                <div id="choropleth_map"></div>
+            </div>
+        </div>
+    </div>
 
+    <script type="text/javascript">
+        var spec = "jsons/map_participation.vg.json";
+        vegaEmbed('#choropleth_map', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
 </body>
 </html>
