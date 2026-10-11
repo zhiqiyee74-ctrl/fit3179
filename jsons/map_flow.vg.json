@@ -1,9 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Interstate Student Mobility (Flows > 2,000 students)",
-  "width": 600,
+  "width": "container",
   "height": 400,
   "projection": {"type": "mercator"},
+  "params": [
+    {
+      "name": "Origin_State",
+      "value": "NSW",
+      "bind": {
+        "input": "select",
+        "options": ["NSW", "VIC", "QLD", "WA", "SA", "ACT"],
+        "labels": ["New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Australian Capital Territory"],
+        "name": "Select Home State: "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
@@ -21,24 +33,46 @@
       "data": {
         "url": "jsons/interstate_flows.json"
       },
-      "mark": {"type": "rule", "color": "#2171b5", "opacity": 0.6},
-      "encoding": {
-        "longitude": {"field": "origin_lon", "type": "quantitative"},
-        "latitude": {"field": "origin_lat", "type": "quantitative"},
-        "longitude2": {"field": "dest_lon"},
-        "latitude2": {"field": "dest_lat"},
-        "size": {
-          "field": "students",
-          "type": "quantitative",
-          "scale": {"range": [1, 8]},
-          "legend": {"title": "Number of Students"}
+      "transform": [
+        {"filter": "datum.origin == Origin_State"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#2171b5", "opacity": 0.8},
+          "encoding": {
+            "longitude": {"field": "origin_lon", "type": "quantitative"},
+            "latitude": {"field": "origin_lat", "type": "quantitative"},
+            "longitude2": {"field": "dest_lon"},
+            "latitude2": {"field": "dest_lat"},
+            "size": {
+              "field": "students",
+              "type": "quantitative",
+              "scale": {"range": [1, 8]},
+              "legend": {
+                "title": "Number of Students",
+                "orient": "bottom-right"
+              }
+            },
+            "tooltip": [
+              {"field": "origin", "type": "nominal", "title": "From"},
+              {"field": "dest", "type": "nominal", "title": "To"},
+              {"field": "students", "type": "quantitative", "title": "Students", "format": ","}
+            ]
+          }
         },
-        "tooltip": [
-          {"field": "origin", "type": "nominal", "title": "Home State"},
-          {"field": "dest", "type": "nominal", "title": "Destination State"},
-          {"field": "students", "type": "quantitative", "title": "Students Moving", "format": ","}
-        ]
-      }
+        {
+          "mark": {"type": "circle", "color": "#08519c", "opacity": 1},
+          "encoding": {
+            "longitude": {"field": "dest_lon", "type": "quantitative"},
+            "latitude": {"field": "dest_lat", "type": "quantitative"},
+            "size": {"value": 60},
+            "tooltip": [
+              {"field": "dest", "type": "nominal", "title": "Destination"},
+              {"field": "students", "type": "quantitative", "title": "Incoming Students"}
+            ]
+          }
+        }
+      ]
     }
   ]
 }

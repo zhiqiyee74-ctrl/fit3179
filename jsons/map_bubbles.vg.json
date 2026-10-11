@@ -28,8 +28,21 @@
         "size": {
           "field": "total_students",
           "type": "quantitative",
-          "title": "Total Students",
-          "scale": {"domain": [5000, 350000], "range": [50, 2000]}
+          "scale": {
+            "domain": [5000, 350000],
+            "range": [30, 450]
+          },
+          "legend": {
+            "title": "Total Students",
+            "orient": "bottom-left",
+            "direction": "horizontal",
+            "values": [50000, 150000, 300000],
+            "format": "~s",
+            "titleFontSize": 10,
+            "labelFontSize": 9,
+            "symbolSize": 120,
+            "columnPadding": 8
+          }
         },
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},

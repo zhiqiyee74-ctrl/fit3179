@@ -1,0 +1,29 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+.card {
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Ensure Vega SVGs fit the card width without triggering scrollbars */
+.vega-embed {
+    width: 100% !important;
+}
+
+.vega-embed summary {
+    top: -5px;
+    right: 5px;
+}
+
+.vega-embed .vega-canvas,
+.vega-embed .vega-svg {
+    max-width: 100% !important;
+    height: auto !important;
+}
