@@ -1,0 +1,23 @@
+{
+  "links": [
+    {"source": "School Leavers", "target": "Enrolled", "value": 174.8, "s_x": 1, "s_y": 150, "t_x": 2, "t_y": 80},
+    {"source": "School Leavers", "target": "Not Enrolled", "value": 143.2, "s_x": 1, "s_y": 150, "t_x": 2, "t_y": 220},
+    {"source": "Enrolled", "target": "Higher Ed", "value": 114.9, "s_x": 2, "s_y": 80, "t_x": 3, "t_y": 30},
+    {"source": "Enrolled", "target": "TAFE/VET", "value": 41.3, "s_x": 2, "s_y": 80, "t_x": 3, "t_y": 80},
+    {"source": "Enrolled", "target": "Other Study", "value": 8.6, "s_x": 2, "s_y": 80, "t_x": 3, "t_y": 130},
+    {"source": "Not Enrolled", "target": "Employed Full-time", "value": 32.9, "s_x": 2, "s_y": 220, "t_x": 3, "t_y": 180},
+    {"source": "Not Enrolled", "target": "Employed Part-time", "value": 56.5, "s_x": 2, "s_y": 220, "t_x": 3, "t_y": 230},
+    {"source": "Not Enrolled", "target": "Not Employed", "value": 49.8, "s_x": 2, "s_y": 220, "t_x": 3, "t_y": 280}
+  ],
+  "nodes": [
+    {"node": "School Leavers", "x": 1, "y": 150, "align": "right", "dx": -15, "dy": 0},
+    {"node": "Enrolled", "x": 2, "y": 80, "align": "center", "dx": 0, "dy": -25},
+    {"node": "Not Enrolled", "x": 2, "y": 220, "align": "center", "dx": 0, "dy": 25},
+    {"node": "Higher Ed", "x": 3, "y": 30, "align": "left", "dx": 15, "dy": 0},
+    {"node": "TAFE/VET", "x": 3, "y": 80, "align": "left", "dx": 15, "dy": 0},
+    {"node": "Other Study", "x": 3, "y": 130, "align": "left", "dx": 15, "dy": 0},
+    {"node": "Employed Full-time", "x": 3, "y": 180, "align": "left", "dx": 15, "dy": 0},
+    {"node": "Employed Part-time", "x": 3, "y": 230, "align": "left", "dx": 15, "dy": 0},
+    {"node": "Not Employed", "x": 3, "y": 280, "align": "left", "dx": 15, "dy": 0}
+  ]
+}

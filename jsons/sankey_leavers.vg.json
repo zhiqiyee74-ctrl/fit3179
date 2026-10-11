@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Pathways of 2024 School Leavers ('000s)",
+  "width": "container",
+  "height": 500,
+  "padding": 3,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "text": {"fontSize": 11, "fontWeight": "bold", "color": "#1e293b"}
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {"source": "School Leavers", "target": "Enrolled", "value": 174.8, "s_x": 1, "s_y": 150, "t_x": 2, "t_y": 80, "cat": "Enrolled"},
+          {"source": "School Leavers", "target": "Not Enrolled", "value": 143.2, "s_x": 1, "s_y": 150, "t_x": 2, "t_y": 220, "cat": "Not Enrolled"},
+          {"source": "Enrolled", "target": "Higher Ed", "value": 114.9, "s_x": 2, "s_y": 80, "t_x": 3, "t_y": 30, "cat": "Enrolled"},
+          {"source": "Enrolled", "target": "TAFE/VET", "value": 41.3, "s_x": 2, "s_y": 80, "t_x": 3, "t_y": 80, "cat": "Enrolled"},
+          {"source": "Enrolled", "target": "Other Study", "value": 8.6, "s_x": 2, "s_y": 80, "t_x": 3, "t_y": 130, "cat": "Enrolled"},
+          {"source": "Not Enrolled", "target": "Employed Full-time", "value": 32.9, "s_x": 2, "s_y": 220, "t_x": 3, "t_y": 180, "cat": "Not Enrolled"},
+          {"source": "Not Enrolled", "target": "Employed Part-time", "value": 56.5, "s_x": 2, "s_y": 220, "t_x": 3, "t_y": 230, "cat": "Not Enrolled"},
+          {"source": "Not Enrolled", "target": "Not Employed", "value": 49.8, "s_x": 2, "s_y": 220, "t_x": 3, "t_y": 280, "cat": "Not Enrolled"}
+        ]
+      },
+      "mark": {"type": "rule", "opacity": 0.5, "strokeCap": "round"},
+      "encoding": {
+        "x": {"field": "s_x", "type": "quantitative", "axis": null, "scale": {"domain": [0.4, 3.6]}},
+        "y": {"field": "s_y", "type": "quantitative", "axis": null, "scale": {"reverse": true, "domain": [15, 295]}},
+        "x2": {"field": "t_x"},
+        "y2": {"field": "t_y"},
+        "size": {"field": "value", "type": "quantitative", "scale": {"range": [4, 30]}, "legend": null},
+        "color": {"field": "cat", "type": "nominal", "scale": {"range": ["#2171b5", "#6baed6"]}, "legend": null},
+        "tooltip": [
+          {"field": "source", "type": "nominal", "title": "From"},
+          {"field": "target", "type": "nominal", "title": "To"},
+          {"field": "value", "type": "quantitative", "title": "Students ('000)"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"node": "School Leavers", "x": 1, "y": 150},
+          {"node": "Enrolled", "x": 2, "y": 80},
+          {"node": "Not Enrolled", "x": 2, "y": 220},
+          {"node": "Higher Ed", "x": 3, "y": 30},
+          {"node": "TAFE/VET", "x": 3, "y": 80},
+          {"node": "Other Study", "x": 3, "y": 130},
+          {"node": "Employed FT", "x": 3, "y": 180},
+          {"node": "Employed PT", "x": 3, "y": 230},
+          {"node": "Not Employed", "x": 3, "y": 280}
+        ]
+      },
+      "mark": {"type": "circle", "color": "#08306b", "size": 90, "opacity": 0.9},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [0.4, 3.6]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"reverse": true, "domain": [15, 295]}}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"node": "School Leavers (314.6k)", "x": 1, "y": 150},
+          {"node": "Not Enrolled (143.2k)", "x": 2, "y": 220}
+        ]
+      },
+      "mark": {"type": "text", "align": "center", "baseline": "top", "dy": 10},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "node", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"node": "Enrolled (174.8k)", "x": 2, "y": 80}]
+      },
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -10},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "node", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"node": "Higher Ed (114.9k)", "x": 3, "y": 30},
+          {"node": "TAFE/VET (41.3k)", "x": 3, "y": 80},
+          {"node": "Other Study (8.6k)", "x": 3, "y": 130},
+          {"node": "Employed FT (32.9k)", "x": 3, "y": 180},
+          {"node": "Employed PT (56.5k)", "x": 3, "y": 230},
+          {"node": "Not Employed (49.8k)", "x": 3, "y": 280}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 12},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "node", "type": "nominal"}
+      }
+    }
+  ]
+}
