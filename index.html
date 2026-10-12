@@ -17,6 +17,20 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Navigation Pill CSS -->
+    <style>
+        .nav-pill-custom {
+            border: 2px solid #08519c;
+            color: #08519c;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-pill-custom:hover {
+            background-color: #08519c;
+            color: #ffffff;
+        }
+    </style>
+
     <!-- Vega & Vega-Lite Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -24,12 +38,15 @@
 </head>
 <body class="bg-light text-dark">
 
-    <header class="py-5 bg-white border-bottom shadow-sm mb-4">
-        <div class="container text-center">
-            <h1 class="fw-bold tracking-tight">Higher Education Pathways in Australia</h1>
-            <p class="lead text-muted mb-0">
-                Exploring educational journeys, student mobility, and transitions into tertiary study.
-            </p>
+    <header class="text-center bg-white shadow-sm p-5 mb-5">
+        <h1 class="fw-bold">Higher Education Pathways in Australia</h1>
+        <p class="lead text-secondary mb-4">Exploring educational journeys, student mobility, and transitions into tertiary study.</p>
+        
+        <!-- Navigation Directory -->
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a href="#part1" class="btn rounded-pill px-4 nav-pill-custom">1. Geographic Distribution</a>
+            <a href="#part2" class="btn rounded-pill px-4 nav-pill-custom">2. Demographics & Fields</a>
+            <a href="#part3" class="btn rounded-pill px-4 nav-pill-custom">3. Pathways & Outcomes</a>
         </div>
     </header>
 
@@ -38,7 +55,7 @@
         <!-- 
              PART 1: GEOGRAPHIC DISTRIBUTION
          -->
-        <section class="mb-5">
+        <section id="part1" class="mb-5" style="scroll-margin-top: 2rem;">
             <div class="row mb-3">
                 <div class="col-12">
                     <h2 class="h2 fw-semibold border-bottom pb-2">1. Geographic Distribution & Mobility</h2>
@@ -89,7 +106,7 @@
         <!-- 
              PART 2: DEMOGRAPHICS & STUDY FIELDS
          -->
-        <section class="mb-5 mt-5">
+        <section id="part2" class="mb-5 mt-5" style="scroll-margin-top: 2rem;">
             <div class="row mb-3">
                 <div class="col-12">
                     <h2 class="h2 fw-semibold border-bottom pb-2">2. Demographics & Fields of Study</h2>
@@ -188,7 +205,7 @@
         <!-- 
              PART 3: PATHWAYS & OUTCOMES
          -->
-        <section class="mb-5 mt-5">
+        <section id="part3" class="mb-5 mt-5" style="scroll-margin-top: 2rem;">
             <div class="row mb-3">
                 <div class="col-12">
                     <h2 class="h2 fw-semibold border-bottom pb-2">3. Pathways & Workforce Outcomes</h2>
