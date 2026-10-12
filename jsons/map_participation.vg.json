@@ -34,7 +34,7 @@
       },
       "legend": {
         "title": "Participation (%)",
-        "orient": "bottom-right"
+        "orient": "bottom-left"
       }
     },
     "tooltip": [
