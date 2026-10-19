@@ -141,13 +141,13 @@
                     </div>
                 </div>
                 
-                <!-- Chart 5: Radial Chart -->
+                <!-- Chart 5: Bar Chart -->
                 <div class="col-12 col-lg-4">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body d-flex flex-column">
                             <h3 class="h6 card-title fw-bold text-dark mb-3">Popular Fields of Study</h3>
                             <div class="d-flex align-items-center flex-grow-1 w-100">
-                                <div id="radial_foe" class="w-100"></div>
+                                <div id="bar_foe" class="w-100"></div>
                             </div>
                             <!-- Custom HTML Legend -->
                             <div class="small text-muted mt-3 border-top pt-3">
@@ -322,7 +322,7 @@
         vegaEmbed('#flow_map', "jsons/map_flow.vg.json", embedOptions).catch(console.error);
         
         vegaEmbed('#heatmap_age', "jsons/heatmap_age.vg.json", embedOptions).catch(console.error);
-        vegaEmbed('#radial_foe', "jsons/radial_foe.vg.json", embedOptions).catch(console.error);
+        vegaEmbed('#bar_foe', "jsons/bar_foe.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#area_trends', "jsons/area_trends.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#dumbbell_gender', "jsons/dumbbell_gender.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#diverging_modes', "jsons/diverging_modes.vg.json", embedOptions).catch(console.error);

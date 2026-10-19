@@ -11,11 +11,14 @@
       "type": "nominal",
       "axis": {"title": "Age Group", "grid": true, "gridOpacity": 0.4}
     },
-    "x": {
-      "field": "Proportion",
-      "type": "quantitative",
-      "scale": {"zero": false},
-      "axis": {"title": "Participation Rate (%)"}
+    "height": {"step": 40}, 
+    "encoding": {
+      "x": {
+        "field": "Participation",
+        "type": "quantitative",
+        "scale": {"domain": [0, 48]},
+        "axis": {"title": "Participation Rate (%)"}
+      }
     }
   },
   "layer": [
@@ -24,6 +27,7 @@
       "encoding": {
         "detail": {"field": "Age"}
       }
+      
     },
     {
       "mark": {"type": "point", "size": 150, "filled": true, "opacity": 1},
@@ -39,6 +43,14 @@
           {"field": "Gender", "type": "nominal"},
           {"field": "Proportion", "type": "quantitative", "title": "Participation (%)"}
         ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "right", "dx": -15, "dy": -10, "fontSize": 11, "fontStyle": "italic", "color": "#08519c", "fontWeight": "bold"},
+      "encoding": {
+        "y": {"datum": "20-24"},
+        "x": {"datum": 45},
+        "text": {"value": ["Largest gender participation gap"]}
       }
     }
   ]
