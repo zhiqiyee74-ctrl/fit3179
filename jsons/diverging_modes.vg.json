@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 300,
+  "height": 400,
   "data": {
     "url": "data/study_modes.json"
   },
@@ -31,17 +31,19 @@
       }
     },
     "color": {
-      "field": "Type",
-      "type": "nominal",
-      "scale": {
-        "domain": ["Part-time", "Full-time"],
-        "range": ["#6baed6", "#08519c"]
-      },
-      "legend": {
-        "title": "Study Mode",
-        "orient": "bottom"
-      }
-    },
+          "field": "Type",
+          "type": "nominal",
+          "scale": {"range": ["#9ecae1", "#08519c"]},
+          "legend": {
+            "title": "Study Mode",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFontSize": 14,
+            "labelFontSize": 13,
+            "symbolSize": 200,
+            "padding": 10
+          }
+        },
     "tooltip": [
       {"field": "State", "type": "nominal"},
       {"field": "Type", "type": "nominal"},

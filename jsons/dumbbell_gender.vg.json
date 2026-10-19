@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 380,
+  "height": 400,
   "data": {
     "url": "data/gender_gap.json"
   },
@@ -39,7 +39,11 @@
           "legend": {
             "title": "Gender",
             "orient": "bottom",
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "titleFontSize": 14,
+            "labelFontSize": 13,
+            "symbolSize": 200,
+            "padding": 10
           }
         },
         "tooltip": [

@@ -5,40 +5,68 @@
   "data": {
     "url": "data/foe_trends.json"
   },
-  "mark": {
-    "type": "line",
-    "point": {"filled": true, "size": 40},
-    "strokeWidth": 2.5
-  },
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "ordinal",
-      "axis": {"labelAngle": 0, "grid": false}
-    },
-    "y": {
-      "field": "Proportion",
-      "type": "quantitative",
-      "title": "Participation Share (%)",
-      "axis": {"grid": true, "gridOpacity": 0.5},
-      "scale": {"zero": false}
-    },
-    "color": {
-      "field": "Field",
-      "type": "nominal",
-      "legend": {
-        "title": "Field of Study",
-        "orient": "right",
-        "labelFontSize": 11
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {"filled": true, "size": 40},
+        "strokeWidth": 2.5
       },
-      "scale": {
-        "range": ["#1f77b4", "#ff7f0e", "#9467bd", "#e377c2", "#17becf", "#7f7f7f", "#e7ba52"]
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {"labelAngle": 0, "grid": false}
+        },
+        "y": {
+          "field": "Proportion",
+          "type": "quantitative",
+          "title": "Participation Share (%)",
+          "axis": {"grid": true, "gridOpacity": 0.5},
+          "scale": {"zero": false}
+        },
+        "color": {
+          "field": "Field",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "range": ["#1f77b4", "#ff7f0e", "#9467bd", "#e377c2", "#17becf", "#7f7f7f", "#e7ba52"]
+          }
+        },
+        "tooltip": [
+          {"field": "Field", "type": "nominal", "title": "Field"},
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "Proportion", "type": "quantitative", "title": "Share (%)"}
+        ]
       }
     },
-    "tooltip": [
-      {"field": "Field", "type": "nominal", "title": "Field"},
-      {"field": "Year", "type": "ordinal", "title": "Year"},
-      {"field": "Proportion", "type": "quantitative", "title": "Share (%)"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "rule", 
+        "color": "#e6550d", 
+        "strokeDash": [4, 4], 
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {"datum": 2020, "type": "ordinal"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text", 
+        "align": "right", 
+        "dx": -8, 
+        "dy": 15,
+        "fontSize": 11, 
+        "fontStyle": "italic", 
+        "color": "#e6550d",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"datum": 2020, "type": "ordinal"},
+        "y": {"datum": 23.5}, 
+        "text": {"value": ["Pandemic surge begins (2020)"]}
+      }
+    }
+  ]
 }
