@@ -39,7 +39,6 @@
           "legend": {"title": "Gender", "orient": "bottom-right"}
         },
         "tooltip": [
-          {"field": "Age", "type": "nominal"},
           {"field": "Gender", "type": "nominal"},
           {"field": "Proportion", "type": "quantitative", "title": "Participation (%)"}
         ]
