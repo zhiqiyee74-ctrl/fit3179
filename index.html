@@ -132,7 +132,7 @@
             <!-- Row 1: Age Heatmap & Popular Fields -->
              <!-- Chart 4: Age Heatmap -->
             <div class="row g-4 align-items-stretch mb-4">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-6 mb-4">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body d-flex flex-column">
                             <h3 class="h6 card-title fw-bold text-dark mb-3">Study Level Trajectory by Age</h3>
@@ -141,13 +141,13 @@
                     </div>
                 </div>
                 
-                <!-- Chart 5: Bar Chart -->
-                <div class="col-12 col-lg-4">
+                <!-- Chart 5: Lollipop Chart -->
+                <div class="col-12 col-lg-6 mb-4">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body d-flex flex-column">
                             <h3 class="h6 card-title fw-bold text-dark mb-3">Popular Fields of Study</h3>
                             <div class="d-flex align-items-center flex-grow-1 w-100">
-                                <div id="bar_foe" class="w-100"></div>
+                                <div id="lollipop_foe" class="w-100"></div>
                             </div>
                             <!-- Custom HTML Legend -->
                             <div class="small text-muted mt-3 border-top pt-3">
@@ -322,7 +322,7 @@
         vegaEmbed('#flow_map', "jsons/map_flow.vg.json", embedOptions).catch(console.error);
         
         vegaEmbed('#heatmap_age', "jsons/heatmap_age.vg.json", embedOptions).catch(console.error);
-        vegaEmbed('#bar_foe', "jsons/bar_foe.vg.json", embedOptions).catch(console.error);
+        vegaEmbed('#lollipop_foe', "jsons/lollipop_foe.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#area_trends', "jsons/area_trends.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#dumbbell_gender', "jsons/dumbbell_gender.vg.json", embedOptions).catch(console.error);
         vegaEmbed('#diverging_modes', "jsons/diverging_modes.vg.json", embedOptions).catch(console.error);

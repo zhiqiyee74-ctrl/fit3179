@@ -19,7 +19,32 @@
         "color": {
           "field": "Field",
           "type": "nominal",
-          "scale": {"range": ["#08519c", "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#31a354"]},
+          "scale": {
+            "domain": [
+              "Education", 
+              "Engineering", 
+              "Health", 
+              "Information Technology", 
+              "Management & Commerce", 
+              "Science", 
+              "Society & Culture",
+              "Creative Arts",
+              "Architecture & Building",
+              "Agriculture & Environment"
+            ],
+            "range": [
+              "#1f77b4", 
+              "#ff7f0e", 
+              "#9467bd", 
+              "#e377c2", 
+              "#17becf", 
+              "#7f7f7f", 
+              "#e7ba52",
+              "#2ca02c",
+              "#d62728",
+              "#8c564b"
+            ]
+          },
           "legend": null
         },
         "tooltip": [
