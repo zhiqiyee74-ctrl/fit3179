@@ -7,8 +7,6 @@
   },
   "layer": [
     {
-      "width": 350,
-      "height": 350,
       "mark": {
         "type": "arc",
         "innerRadius": 110,

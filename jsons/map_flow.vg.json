@@ -85,8 +85,6 @@
           "encoding": {
             "longitude": {"field": "origin_lon", "type": "quantitative"},
             "latitude": {"field": "origin_lat", "type": "quantitative"},
-            "longitude2": {"field": "dest_lon", "type": "quantitative"},
-            "latitude2": {"field": "dest_lat", "type": "quantitative"},
             "size": {
               "field": "students",
               "type": "quantitative",
