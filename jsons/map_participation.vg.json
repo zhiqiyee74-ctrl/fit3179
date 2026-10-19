@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Study Participation Rate by State/Territory (%)",
   "width": 600,
   "height": 400,
   "projection": {"type": "mercator"},

@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Pathways of 2024 School Leavers ('000s)",
   "width": "container",
   "height": 500,
   "padding": 3,

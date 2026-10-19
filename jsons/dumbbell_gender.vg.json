@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Gender Gap in Tertiary Study Participation",
   "width": "container",
   "height": 300,
   "data": {
@@ -15,6 +14,7 @@
     "x": {
       "field": "Proportion",
       "type": "quantitative",
+      "scale": {"zero": false},
       "axis": {"title": "Participation Rate (%)"}
     }
   },

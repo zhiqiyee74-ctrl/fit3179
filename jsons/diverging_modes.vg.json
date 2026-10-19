@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Full-time vs Part-time Enrollments by State",
   "width": "container",
   "height": 300,
   "data": {

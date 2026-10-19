@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Domestic Student Course Enrollment by Age",
   "width": "container",
   "height": 400,
   "data": {

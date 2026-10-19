@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Interstate Student Mobility (Flows > 2,000 students)",
   "width": "container",
   "height": 400,
   "projection": {"type": "mercator"},

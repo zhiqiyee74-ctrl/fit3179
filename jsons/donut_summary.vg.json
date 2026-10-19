@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Ultimate Destinations of 2024 School Leavers",
   "width": "container",
   "height": 300,
   "data": {
