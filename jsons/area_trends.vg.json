@@ -5,12 +5,20 @@
   "data": {
     "url": "data/foe_trends.json"
   },
+  "params": [
+    {"name": "Edu", "value": true, "bind": {"input": "checkbox", "name": "Education "}},
+    {"name": "Eng", "value": true, "bind": {"input": "checkbox", "name": "Engineering "}},
+    {"name": "Hea", "value": true, "bind": {"input": "checkbox", "name": "Health "}},
+    {"name": "IT", "value": true, "bind": {"input": "checkbox", "name": "IT "}},
+    {"name": "Com", "value": true, "bind": {"input": "checkbox", "name": "Commerce "}},
+    {"name": "Sci", "value": true, "bind": {"input": "checkbox", "name": "Science "}},
+    {"name": "Soc", "value": true, "bind": {"input": "checkbox", "name": "Society "}}
+  ],
   "layer": [
     {
       "mark": {
-        "type": "line",
-        "point": {"filled": true, "size": 40},
-        "strokeWidth": 2.5
+        "type": "area",
+        "line": true
       },
       "encoding": {
         "x": {
@@ -19,10 +27,46 @@
           "axis": {"labelAngle": 0, "grid": false}
         },
         "y": {
+          "field": "Proportion", 
+          "type": "quantitative",
+          "stack": null,
+          "scale": {"zero": false},
+          "axis": {
+            "title": "Participation Share (%)"
+          }
+        },
+        "color": {
+          "field": "Field",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "range": ["#1f77b4", "#ff7f0e", "#9467bd", "#e377c2", "#17becf", "#7f7f7f", "#e7ba52"]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "(!Edu && !Eng && !Hea && !IT && !Com && !Sci && !Soc) || (Edu && datum.Field == 'Education') || (Eng && datum.Field == 'Engineering') || (Hea && datum.Field == 'Health') || (IT && datum.Field == 'Information technology') || (Com && datum.Field == 'Management/Commerce') || (Sci && datum.Field == 'Science') || (Soc && datum.Field == 'Society/Culture')",
+            "value": 0.6
+          },
+          "value": 0.05
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 50
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
           "field": "Proportion",
           "type": "quantitative",
-          "title": "Participation Share (%)",
-          "axis": {"grid": true, "gridOpacity": 0.5},
+          "stack": null,
           "scale": {"zero": false}
         },
         "color": {
@@ -33,10 +77,17 @@
             "range": ["#1f77b4", "#ff7f0e", "#9467bd", "#e377c2", "#17becf", "#7f7f7f", "#e7ba52"]
           }
         },
+        "opacity": {
+          "condition": {
+            "test": "(!Edu && !Eng && !Hea && !IT && !Com && !Sci && !Soc) || (Edu && datum.Field == 'Education') || (Eng && datum.Field == 'Engineering') || (Hea && datum.Field == 'Health') || (IT && datum.Field == 'Information technology') || (Com && datum.Field == 'Management/Commerce') || (Sci && datum.Field == 'Science') || (Soc && datum.Field == 'Society/Culture')",
+            "value": 1
+          },
+          "value": 0
+        },
         "tooltip": [
           {"field": "Field", "type": "nominal", "title": "Field"},
           {"field": "Year", "type": "ordinal", "title": "Year"},
-          {"field": "Proportion", "type": "quantitative", "title": "Share (%)"}
+          {"field": "Proportion", "type": "quantitative", "format": ".1f", "title": "Share (%)"}
         ]
       }
     },

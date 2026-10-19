@@ -27,3 +27,20 @@ body {
     max-width: 100% !important;
     height: auto !important;
 }
+
+/* Makes all Vega-Lite checkbox bindings display horizontally in a wrapping row */
+.vega-bindings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.vega-bindings label {
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
