@@ -1,47 +1,51 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": {"step": 40},
+  "height": 380,
   "data": {
     "url": "data/gender_gap.json"
-  },
-  "encoding": {
-    "y": {
-      "field": "Age Group",
-      "type": "nominal",
-      "axis": {"title": "Age Group", "labelPadding": 10}
-    }
   },
   "layer": [
     {
       "mark": {"type": "line", "color": "#cbd5e1", "strokeWidth": 3},
       "encoding": {
-        "x": {
-          "field": "Participation",
-          "type": "quantitative",
-          "scale": {"domain": [0, 100]}
+        "y": {
+          "field": "Age", 
+          "type": "nominal", 
+          "axis": {"title": "Age Group", "labelPadding": 10}
         },
-        "detail": {"field": "Age Group"}
+        "x": {
+          "field": "Proportion", 
+          "type": "quantitative", 
+          "scale": {"domain": [0, 50]}
+        },
+        "detail": {"field": "Age", "type": "nominal"}
       }
     },
     {
       "mark": {"type": "circle", "size": 150, "opacity": 1},
       "encoding": {
+        "y": {"field": "Age", "type": "nominal"},
         "x": {
-          "field": "Participation",
+          "field": "Proportion",
           "type": "quantitative",
-          "axis": {"title": "Participation Rate (%)"}
+          "axis": {"title": "Participation Rate (%)"},
+          "scale": {"domain": [0, 50]}
         },
         "color": {
           "field": "Gender",
           "type": "nominal",
           "scale": {"range": ["#08519c", "#9ecae1"]},
-          "legend": {"title": "Gender"}
+          "legend": {
+            "title": "Gender",
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
         },
         "tooltip": [
-          {"field": "Age Group", "type": "nominal"},
+          {"field": "Age", "type": "nominal", "title": "Age Group"},
           {"field": "Gender", "type": "nominal"},
-          {"field": "Participation", "type": "quantitative", "title": "Rate (%)"}
+          {"field": "Proportion", "type": "quantitative", "title": "Rate (%)"}
         ]
       }
     },
@@ -49,10 +53,10 @@
       "transform": [
         {
           "aggregate": [
-            {"op": "min", "field": "Participation", "as": "min_prop"},
-            {"op": "max", "field": "Participation", "as": "max_prop"}
+            {"op": "min", "field": "Proportion", "as": "min_prop"},
+            {"op": "max", "field": "Proportion", "as": "max_prop"}
           ],
-          "groupby": ["Age Group"]
+          "groupby": ["Age"]
         },
         {
           "calculate": "(datum.max_prop + datum.min_prop) / 2",
@@ -65,13 +69,18 @@
       ],
       "mark": {
         "type": "text",
-        "dy": -12,
+        "dy": -15,
         "fontSize": 11,
         "fontWeight": "bold",
         "color": "#08519c"
       },
       "encoding": {
-        "x": {"field": "midpoint", "type": "quantitative"},
+        "y": {"field": "Age", "type": "nominal"},
+        "x": {
+          "field": "midpoint", 
+          "type": "quantitative", 
+          "scale": {"domain": [0, 50]}
+        },
         "text": {"field": "gap_label", "type": "nominal"}
       }
     }
