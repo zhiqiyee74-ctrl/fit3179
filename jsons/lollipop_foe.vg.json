@@ -58,6 +58,21 @@
       "encoding": {
         "x": {"aggregate": "mean", "field": "Students", "type": "quantitative"}
       }
+    },
+    {
+      "mark": {
+        "type": "text", 
+        "align": "left", 
+        "dx": 8, 
+        "color": "#e6550d", 
+        "fontWeight": "bold", 
+        "fontSize": 11
+      },
+      "encoding": {
+        "x": {"aggregate": "mean", "field": "Students", "type": "quantitative"},
+        "y": {"value": 5},
+        "text": {"value": "National Average"}
+      }
     }
   ]
 }
