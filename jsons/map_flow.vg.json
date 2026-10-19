@@ -1,77 +1,179 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 400,
-  "projection": {"type": "mercator"},
+  "data": {
+    "url": "data/interstate_flows.json"
+  },
   "params": [
     {
-      "name": "Origin_State",
+      "name": "home_state",
       "value": "NSW",
       "bind": {
         "input": "select",
-        "options": ["NSW", "VIC", "QLD", "WA", "SA", "ACT"],
-        "labels": ["New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Australian Capital Territory"],
+        "options": [
+          "NSW",
+          "VIC",
+          "QLD",
+          "WA",
+          "SA",
+          "TAS",
+          "ACT",
+          "NT"
+        ],
+        "labels": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Australian Capital Territory",
+          "Northern Territory"
+        ],
         "name": "Select Home State: "
       }
     }
   ],
-  "layer": [
+  "transform": [
+    {"filter": "datum.origin == home_state"}
+  ],
+  "hconcat": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-        "format": {"type": "json", "property": "features"}
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#f0f0f0",
-        "stroke": "#cccccc",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "data": {
-        "url": "data/interstate_flows.json"
-      },
-      "transform": [
-        {"filter": "datum.origin == Origin_State"}
-      ],
+      "title": "Interstate Migration Map",
+      "width": 500,
+      "height": 450,
+      "projection": {"type": "mercator"},
       "layer": [
         {
-          "mark": {"type": "rule", "color": "#2171b5", "opacity": 0.8},
+          "data": {
+            "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+            "format": {"type": "json", "property": "features"}
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#f0f0f0",
+            "stroke": "white",
+            "strokeWidth": 1.5
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"state": "WA", "lon": 122.5, "lat": -26.0},
+              {"state": "NT", "lon": 133.5, "lat": -21.0},
+              {"state": "SA", "lon": 136.0, "lat": -30.0},
+              {"state": "QLD", "lon": 144.0, "lat": -22.5},
+              {"state": "NSW", "lon": 146.5, "lat": -32.5},
+              {"state": "VIC", "lon": 144.5, "lat": -36.5},
+              {"state": "TAS", "lon": 146.5, "lat": -42.0}
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "color": "#a1a1a1",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "opacity": 0.7
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "state", "type": "nominal"}
+          }
+        },
+        {
+          "mark": {"type": "rule", "opacity": 0.8},
           "encoding": {
             "longitude": {"field": "origin_lon", "type": "quantitative"},
             "latitude": {"field": "origin_lat", "type": "quantitative"},
-            "longitude2": {"field": "dest_lon"},
-            "latitude2": {"field": "dest_lat"},
+            "longitude2": {"field": "dest_lon", "type": "quantitative"},
+            "latitude2": {"field": "dest_lat", "type": "quantitative"},
             "size": {
               "field": "students",
               "type": "quantitative",
               "scale": {"range": [1, 8]},
-              "legend": {
-                "title": "Number of Students",
-                "orient": "bottom-right"
-              }
+              "legend": null
+            },
+            "color": {
+              "field": "dest",
+              "type": "nominal",
+              "scale": {"scheme": "category10"},
+              "legend": null
             },
             "tooltip": [
-              {"field": "origin", "type": "nominal", "title": "From"},
-              {"field": "dest", "type": "nominal", "title": "To"},
-              {"field": "students", "type": "quantitative", "title": "Students", "format": ","}
+              {"field": "origin", "type": "nominal", "title": "Origin"},
+              {"field": "dest", "type": "nominal", "title": "Destination"},
+              {"field": "students", "type": "quantitative", "format": ",", "title": "Students"}
             ]
           }
         },
         {
-          "mark": {"type": "circle", "color": "#08519c", "opacity": 1},
+          "mark": {
+            "type": "circle", 
+            "opacity": 1,
+            "fillOpacity": 1,
+            "stroke": "black",
+            "strokeWidth": 1
+          },
           "encoding": {
             "longitude": {"field": "dest_lon", "type": "quantitative"},
             "latitude": {"field": "dest_lat", "type": "quantitative"},
-            "size": {"value": 60},
-            "tooltip": [
-              {"field": "dest", "type": "nominal", "title": "Destination"},
-              {"field": "students", "type": "quantitative", "title": "Incoming Students"}
-            ]
+            "size": {
+              "field": "students",
+              "type": "quantitative",
+              "scale": {"range": [100, 600]},
+              "legend": null
+            },
+            "color": {
+              "field": "dest",
+              "type": "nominal",
+              "scale": {"scheme": "category10"},
+              "legend": {
+                "title": "Destination State",
+                "orient": "bottom",
+                "direction": "horizontal",
+                "columns": 4,
+                "titleFontSize": 13,
+                "labelFontSize": 12,
+                "symbolSize": 200,
+                "padding": 20
+              }
+            }
           }
         }
       ]
+    },
+    {
+      "title": "Student Arrivals",
+      "width": 150,
+      "height": 450,
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "y": {
+          "field": "dest",
+          "type": "nominal",
+          "axis": {"title": null, "grid": true, "labelFontSize": 12, "labelPadding": 10, "orient": "left"}
+        },
+        "text": {
+          "field": "students",
+          "type": "quantitative",
+          "format": ","
+        },
+        "color": {
+          "field": "dest",
+          "type": "nominal",
+          "scale": {"scheme": "category10"},
+          "legend": null
+        }
+      }
     }
-  ]
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "concat": {"spacing": 20}
+  }
 }
