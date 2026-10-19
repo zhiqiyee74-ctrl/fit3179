@@ -63,15 +63,16 @@
       "mark": {
         "type": "text", 
         "align": "left", 
-        "dx": 8, 
+        "dx": 12, 
+        "dy": 100,
         "color": "#e6550d", 
         "fontWeight": "bold", 
-        "fontSize": 11
+        "fontSize": 12
       },
       "encoding": {
         "x": {"aggregate": "mean", "field": "Students", "type": "quantitative"},
-        "y": {"value": 5},
-        "text": {"value": "National Average"}
+        "y": {"value": 0},
+        "text": {"value": ["National", "Average"]}
       }
     }
   ]

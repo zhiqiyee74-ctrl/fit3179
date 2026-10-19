@@ -6,14 +6,22 @@
     "url": "data/gender_gap.json"
   },
   "encoding": {
-    "y": {"field": "Age Group", "type": "nominal", "axis": {"title": "Age Group", "labelPadding": 10}}
+    "y": {
+      "field": "Age Group",
+      "type": "nominal",
+      "axis": {"title": "Age Group", "labelPadding": 10}
+    }
   },
   "layer": [
     {
       "mark": {"type": "line", "color": "#cbd5e1", "strokeWidth": 3},
       "encoding": {
-        "detail": {"field": "Age Group", "type": "nominal"},
-        "x": {"field": "Participation", "type": "quantitative"}
+        "x": {
+          "field": "Participation",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]}
+        },
+        "detail": {"field": "Age Group"}
       }
     },
     {
@@ -22,18 +30,49 @@
         "x": {
           "field": "Participation",
           "type": "quantitative",
-          "scale": {"domain": [0, 100]},
           "axis": {"title": "Participation Rate (%)"}
         },
         "color": {
           "field": "Gender",
           "type": "nominal",
-          "scale": {"range": ["#08519c", "#9ecae1"]}
+          "scale": {"range": ["#08519c", "#9ecae1"]},
+          "legend": {"title": "Gender"}
         },
         "tooltip": [
+          {"field": "Age Group", "type": "nominal"},
           {"field": "Gender", "type": "nominal"},
           {"field": "Participation", "type": "quantitative", "title": "Rate (%)"}
         ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "min", "field": "Participation", "as": "min_prop"},
+            {"op": "max", "field": "Participation", "as": "max_prop"}
+          ],
+          "groupby": ["Age Group"]
+        },
+        {
+          "calculate": "(datum.max_prop + datum.min_prop) / 2",
+          "as": "midpoint"
+        },
+        {
+          "calculate": "format(datum.max_prop - datum.min_prop, '.1f') + '%'",
+          "as": "gap_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -12,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#08519c"
+      },
+      "encoding": {
+        "x": {"field": "midpoint", "type": "quantitative"},
+        "text": {"field": "gap_label", "type": "nominal"}
       }
     }
   ]
