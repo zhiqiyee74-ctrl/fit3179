@@ -3,42 +3,74 @@
   "width": 600,
   "height": 400,
   "projection": {"type": "mercator"},
-  "data": {
-    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-    "format": {"type": "json", "property": "features"}
-  },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.STATE_NAME",
-      "from": {
-        "data": {
-          "url": "data/state_participation.json"
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "url": "data/state_participation.json"
+            },
+            "key": "state",
+            "fields": ["participation_rate"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "participation_rate",
+          "type": "quantitative",
+          "scale": {"scheme": "blues"},
+          "legend": {
+            "title": "Participation (%)",
+            "orient": "bottom-left",
+            "direction": "horizontal",
+            "padding": 15
+          }
         },
-        "key": "state",
-        "fields": ["participation_rate"]
+        "tooltip": [
+          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+          {"field": "participation_rate", "type": "quantitative", "title": "Participation (%)"}
+        ]
       }
     },
     {
-      "calculate": "datum.participation_rate || 0",
-      "as": "Participation Rate"
+      "data": {
+        "values": [
+          {"state": "WA", "lon": 122.5, "lat": -26.0},
+          {"state": "NT", "lon": 133.5, "lat": -21.0},
+          {"state": "SA", "lon": 136.0, "lat": -30.0},
+          {"state": "QLD", "lon": 144.0, "lat": -22.5},
+          {"state": "NSW", "lon": 146.5, "lat": -32.5},
+          {"state": "VIC", "lon": 144.5, "lat": -36.5},
+          {"state": "TAS", "lon": 146.5, "lat": -42.0}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "color": "white",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
     }
   ],
-  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
-  "encoding": {
-    "color": {
-      "field": "Participation Rate",
-      "type": "quantitative",
-      "scale": {
-        "scheme": "blues"
-      },
-      "legend": {
-        "title": "Participation (%)",
-        "orient": "bottom-left"
-      }
-    },
-    "tooltip": [
-      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
-      {"field": "Participation Rate", "type": "quantitative", "title": "Participation Rate (%)"}
-    ]
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }

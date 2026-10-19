@@ -18,36 +18,62 @@
     },
     {
       "data": {
+        "values": [
+          {"state": "WA", "lon": 122.5, "lat": -26.0},
+          {"state": "NT", "lon": 133.5, "lat": -21.0},
+          {"state": "SA", "lon": 136.0, "lat": -30.0},
+          {"state": "QLD", "lon": 144.0, "lat": -22.5},
+          {"state": "NSW", "lon": 146.5, "lat": -32.5},
+          {"state": "VIC", "lon": 144.5, "lat": -36.5},
+          {"state": "TAS", "lon": 146.5, "lat": -42.0}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "color": "#333333",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "opacity": 0.8
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
         "url": "data/state_enrollments.json"
       },
-      "mark": {"type": "circle", "color": "#08519c", "opacity": 0.7},
+      "mark": {
+        "type": "circle",
+        "color": "#4a7eab",
+        "opacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
         "size": {
           "field": "total_students",
           "type": "quantitative",
-          "scale": {
-            "domain": [5000, 350000],
-            "range": [30, 450]
-          },
+          "scale": {"range": [50, 800]},
           "legend": {
             "title": "Total Students",
-            "orient": "bottom-left",
+            "orient": "bottom",
             "direction": "horizontal",
-            "values": [50000, 150000, 300000],
-            "format": "~s",
-            "titleFontSize": 10,
-            "labelFontSize": 9,
-            "symbolSize": 120,
-            "columnPadding": 8
+            "padding": 15
           }
         },
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},
-          {"field": "total_students", "type": "quantitative", "title": "Total Enrolled", "format": ","}
+          {"field": "total_students", "type": "quantitative", "format": ",", "title": "Total Students"}
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {"stroke": "transparent"}
+  }
 }
