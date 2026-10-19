@@ -7,12 +7,13 @@
   },
   "layer": [
     {
+      "width": 350,
+      "height": 350,
       "mark": {
         "type": "arc",
-        "innerRadius": 75,
-        "outerRadius": 110,
-        "padAngle": 0.04,
-        "cornerRadius": 5
+        "innerRadius": 110,
+        "outerRadius": 160,
+        "tooltip": true
       },
       "encoding": {
         "theta": {
@@ -26,11 +27,7 @@
             "domain": ["Enrolled in Study", "Employed Only", "Not Employed / Looking for Work"],
             "range": ["#08519c", "#6baed6", "#cbd5e1"]
           },
-          "legend": {
-            "orient": "bottom",
-            "title": null,
-            "labelFontSize": 12
-          }
+          "legend": null
         },
         "tooltip": [
           {"field": "Category", "type": "nominal", "title": "Destination"},
